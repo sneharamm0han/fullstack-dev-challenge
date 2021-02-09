@@ -1,10 +1,6 @@
 import React from 'react'
+import { Slider as MaterialSlider, SliderProps } from '@material-ui/core';
 import {
-    Slider as ChakraSlider,
-    SliderTrack,
-    SliderFilledTrack,
-    SliderThumb,
-    SliderProps,
     Text,
     Box,
 } from '@chakra-ui/react'
@@ -16,12 +12,7 @@ type Props = SliderProps & {
 const Slider = ({ label, ...rest }: Props) => (
     <Box width="100%">
         {!!label && <Text align="left">{label}</Text>}
-        <ChakraSlider {...rest} colorScheme="primary">
-            <SliderTrack>
-                <SliderFilledTrack bg="primary" />
-            </SliderTrack>
-            <SliderThumb />
-        </ChakraSlider>
+        <MaterialSlider {...rest}/>
     </Box>
 )
 
